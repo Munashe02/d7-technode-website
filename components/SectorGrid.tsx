@@ -11,7 +11,7 @@ export default function SectorGrid({ limit }: SectorGridProps) {
 
   return (
     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      {visibleSectors.map((sector) => (
+      {visibleSectors.map((sector, index) => (
         <Link
           key={sector.slug}
           href="/services"
@@ -23,6 +23,8 @@ export default function SectorGrid({ limit }: SectorGridProps) {
               alt={`${sector.title} infrastructure`}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              priority={index < 3}
+              loading={index < 3 ? 'eager' : 'lazy'}
               className="object-cover transition duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />

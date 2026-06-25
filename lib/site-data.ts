@@ -77,7 +77,7 @@ export const sectors = [
   {
     title: 'Energy & Utilities',
     slug: 'energy-utilities',
-    image: '/sectors/energy-utilities.jpg',
+    image: '/sectors/optimized/energy-utilities.jpg',
     icon: Zap,
     summary:
       'Protect transformers, substations and renewable energy assets with telemetry, tamper alerts and predictive maintenance.',
@@ -88,7 +88,7 @@ export const sectors = [
   {
     title: 'Water & Municipal Services',
     slug: 'water-municipal-services',
-    image: '/sectors/water-municipal-services.jpg',
+    image: '/sectors/optimized/water-municipal-services.jpg',
     icon: Droplet,
     summary:
       'Monitor pressure, flow, reservoirs, pumps and pipelines to reduce non-revenue water and service outages.',
@@ -99,7 +99,7 @@ export const sectors = [
   {
     title: 'Agriculture & Smart Farming',
     slug: 'agriculture-smart-farming',
-    image: '/sectors/agriculture-smart-farming.jpg',
+    image: '/sectors/optimized/agriculture-smart-farming.jpg',
     icon: Leaf,
     summary:
       'Use field sensors, weather stations and automated irrigation to improve yields and use resources precisely.',
@@ -110,7 +110,7 @@ export const sectors = [
   {
     title: 'Mining & Industrial',
     slug: 'mining-industrial',
-    image: '/sectors/mining-industrial.jpg',
+    image: '/sectors/optimized/mining-industrial.jpg',
     icon: Hammer,
     summary:
       'Bring visibility to harsh environments with machinery, gas, air-quality, fuel and mobile asset monitoring.',
@@ -121,7 +121,7 @@ export const sectors = [
   {
     title: 'Logistics & Fleet',
     slug: 'logistics-fleet',
-    image: '/sectors/logistics-fleet.jpg',
+    image: '/sectors/optimized/logistics-fleet.jpg',
     icon: Truck,
     summary:
       'Track vehicles, routes, driver behaviour and cold-chain conditions across distributed fleet operations.',
@@ -132,7 +132,7 @@ export const sectors = [
   {
     title: 'Security & Anti-Intrusion',
     slug: 'security-anti-intrusion',
-    image: '/sectors/security-anti-intrusion.jpg',
+    image: '/sectors/optimized/security-anti-intrusion.jpg',
     icon: Shield,
     summary:
       'Detect tampering, forced entry, vibration and perimeter activity before incidents become losses.',
@@ -143,7 +143,7 @@ export const sectors = [
   {
     title: 'Smart Buildings & Estates',
     slug: 'smart-buildings-estates',
-    image: '/sectors/smart-buildings-estates.jpg',
+    image: '/sectors/optimized/smart-buildings-estates.jpg',
     icon: Building2,
     summary:
       'Run safer, more efficient properties with occupancy, energy, access, leak and equipment monitoring.',
@@ -154,7 +154,7 @@ export const sectors = [
   {
     title: 'Health & Cold Chain',
     slug: 'health-cold-chain',
-    image: '/sectors/health-cold-chain.jpg',
+    image: '/sectors/optimized/health-cold-chain.jpg',
     icon: Activity,
     summary:
       'Protect vaccines, labs, pharmacies and critical equipment with continuous environmental and power monitoring.',
@@ -165,7 +165,7 @@ export const sectors = [
   {
     title: 'Environmental Monitoring',
     slug: 'environmental-monitoring',
-    image: '/sectors/environmental-monitoring.jpg',
+    image: '/sectors/optimized/environmental-monitoring.jpg',
     icon: Cloud,
     summary:
       'Capture air, water, weather and flood-risk data for cities, industry, conservation and disaster readiness.',

@@ -1,0 +1,16 @@
+{
+  "name": "D7 TechNode Website",
+  "version": "1.0.0",
+  "description": "World-class technology website with modern design and CMS",
+  "author": "D7 TechNode",
+  "license": "PROPRIETARY",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/d7-technode"
+  },
+  "keywords": ["nextjs", "typescript", "tailwindcss", "sanity", "cms", "website", "corporate"],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

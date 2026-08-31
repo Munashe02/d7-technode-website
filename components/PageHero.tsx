@@ -30,6 +30,11 @@ export default function PageHero({
   return (
     <section className="relative overflow-hidden bg-ink text-white">
       <div className="absolute inset-0 grid-pattern opacity-35" aria-hidden="true" />
+      <div className="electric-grid-lines" aria-hidden="true">
+        {Array.from({ length: 10 }).map((_, index) => (
+          <span key={index} className="electric-line" />
+        ))}
+      </div>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-lime/70 to-transparent" aria-hidden="true" />
       <div className="data-sweep" aria-hidden="true" />
       <div className="container-custom relative grid min-h-[680px] gap-12 py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">

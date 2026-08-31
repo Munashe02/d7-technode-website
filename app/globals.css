@@ -87,6 +87,95 @@
     background-size: 56px 56px;
   }
 
+  .electric-grid-lines {
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+    opacity: 0.9;
+    mask-image:
+      linear-gradient(90deg, transparent, black 12%, black 88%, transparent),
+      linear-gradient(180deg, black, black 72%, transparent);
+  }
+
+  .electric-line {
+    @apply absolute block;
+    background:
+      linear-gradient(90deg, transparent, rgba(212, 255, 0, 0.08), transparent),
+      linear-gradient(90deg, transparent 0%, rgba(212, 255, 0, 0.12) 34%, #d4ff00 48%, rgba(0, 220, 220, 0.9) 55%, transparent 72%);
+    background-size: 100% 100%, 220px 100%;
+    background-position: 0 0, -240px 0;
+    filter: drop-shadow(0 0 8px rgba(212, 255, 0, 0.55));
+    animation: electricTrace 7.5s linear infinite;
+  }
+
+  .electric-line:nth-child(odd) {
+    height: 1px;
+    left: 0;
+    right: 0;
+  }
+
+  .electric-line:nth-child(even) {
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background:
+      linear-gradient(180deg, transparent, rgba(212, 255, 0, 0.08), transparent),
+      linear-gradient(180deg, transparent 0%, rgba(212, 255, 0, 0.12) 34%, #d4ff00 48%, rgba(0, 220, 220, 0.9) 55%, transparent 72%);
+    background-size: 100% 100%, 100% 220px;
+    background-position: 0 0, 0 -240px;
+    animation-name: electricTraceVertical;
+  }
+
+  .electric-line:nth-child(1) {
+    top: 112px;
+    animation-delay: -1.2s;
+  }
+
+  .electric-line:nth-child(2) {
+    left: 168px;
+    animation-delay: -4.8s;
+  }
+
+  .electric-line:nth-child(3) {
+    top: 280px;
+    animation-delay: -3.1s;
+  }
+
+  .electric-line:nth-child(4) {
+    left: 392px;
+    animation-delay: -0.7s;
+  }
+
+  .electric-line:nth-child(5) {
+    top: 448px;
+    animation-delay: -5.6s;
+  }
+
+  .electric-line:nth-child(6) {
+    left: 616px;
+    animation-delay: -2.2s;
+  }
+
+  .electric-line:nth-child(7) {
+    top: 616px;
+    animation-delay: -6.7s;
+  }
+
+  .electric-line:nth-child(8) {
+    left: 840px;
+    animation-delay: -3.9s;
+  }
+
+  .electric-line:nth-child(9) {
+    top: 224px;
+    animation-delay: -7.1s;
+    opacity: 0.6;
+  }
+
+  .electric-line:nth-child(10) {
+    left: 1064px;
+    animation-delay: -5s;
+    opacity: 0.6;
+  }
+
   .section-technical {
     @apply relative overflow-hidden bg-slate-50;
   }
@@ -155,6 +244,7 @@
       linear-gradient(90deg, rgba(212, 255, 0, 0.07) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(circle at 70% 40%, black, transparent 72%);
+    animation: gridCurrent 9s ease-in-out infinite;
   }
 
   .data-sweep {
@@ -263,6 +353,48 @@
   }
 }
 
+@keyframes electricTrace {
+  0% {
+    background-position: 0 0, -260px 0;
+    opacity: 0.1;
+  }
+  8%,
+  42% {
+    opacity: 0.95;
+  }
+  58%,
+  100% {
+    background-position: 0 0, calc(100vw + 260px) 0;
+    opacity: 0.08;
+  }
+}
+
+@keyframes electricTraceVertical {
+  0% {
+    background-position: 0 0, 0 -260px;
+    opacity: 0.1;
+  }
+  8%,
+  42% {
+    opacity: 0.85;
+  }
+  58%,
+  100% {
+    background-position: 0 0, 0 980px;
+    opacity: 0.08;
+  }
+}
+
+@keyframes gridCurrent {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @keyframes scanLine {
   0%,
   100% {
@@ -315,5 +447,22 @@
   }
   50% {
     transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .data-sweep,
+  .electric-line,
+  .dark-grid-band::before,
+  .tech-visual__map::after,
+  .network-path,
+  .network-node,
+  .asset-row,
+  .telemetry-bar {
+    animation: none;
+  }
+
+  .asset-row {
+    opacity: 1;
   }
 }

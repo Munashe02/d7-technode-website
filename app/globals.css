@@ -191,6 +191,28 @@
     @apply -translate-y-1 border-primary-500 shadow-lg;
   }
 
+  .homepage-stat-card {
+    @apply flex min-h-24 items-center gap-4 rounded-md bg-primary-900 px-6 py-5 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg;
+    box-shadow: 0 18px 40px rgba(0, 49, 80, 0.16);
+  }
+
+  .blueprint-tile {
+    @apply relative overflow-hidden rounded-md border border-white/10 bg-primary-700/35 p-5 font-semibold text-accent-lime transition hover:-translate-y-0.5 hover:border-accent-lime/35 hover:bg-primary-700/55;
+  }
+
+  .blueprint-tile::after {
+    @apply pointer-events-none absolute inset-0 content-[''];
+    background-image:
+      linear-gradient(rgba(56, 200, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 200, 255, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(135deg, black, transparent 70%);
+  }
+
+  .sector-showcase-card {
+    @apply relative overflow-hidden rounded-sm border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg;
+  }
+
   .signal-chip {
     @apply rounded-sm border border-primary-100 bg-primary-50 px-2.5 py-1 text-xs font-bold text-primary-800;
   }

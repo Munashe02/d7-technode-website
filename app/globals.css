@@ -90,95 +90,87 @@
   .hero-world {
     @apply pointer-events-none absolute inset-0 overflow-hidden;
     background:
-      radial-gradient(circle at 48% 46%, rgba(56, 200, 255, 0.18), transparent 22%),
-      radial-gradient(circle at 74% 25%, rgba(139, 223, 255, 0.12), transparent 28%),
+      radial-gradient(circle at 52% 46%, rgba(56, 200, 255, 0.16), transparent 26%),
+      radial-gradient(circle at 73% 28%, rgba(139, 223, 255, 0.12), transparent 28%),
       linear-gradient(180deg, transparent 0%, rgba(0, 24, 39, 0.12) 76%, rgba(0, 24, 39, 0.42) 100%);
     opacity: 0.95;
     mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
   }
 
-  .hero-world__globe {
-    @apply absolute left-1/2 top-[54%] h-[760px] w-[1220px] -translate-x-1/2 -translate-y-1/2;
-    background:
-      radial-gradient(ellipse at 50% 48%, rgba(56, 200, 255, 0.11), transparent 45%),
-      radial-gradient(ellipse at 38% 52%, rgba(255, 255, 255, 0.08), transparent 8%),
-      radial-gradient(ellipse at 56% 42%, rgba(255, 255, 255, 0.06), transparent 11%),
-      radial-gradient(ellipse at 67% 56%, rgba(255, 255, 255, 0.05), transparent 9%);
-    transform-style: preserve-3d;
+  .hero-world__svg {
+    @apply absolute left-1/2 top-[52%] h-[760px] w-[1350px] max-w-none -translate-x-1/2 -translate-y-1/2;
+    opacity: 0.72;
   }
 
-  .hero-world__globe::before {
-    @apply absolute inset-0 rounded-full border border-accent-lime/20 content-[''];
-    background:
-      repeating-linear-gradient(90deg, rgba(56, 200, 255, 0.18) 0 1px, transparent 1px 78px),
-      repeating-linear-gradient(0deg, rgba(139, 223, 255, 0.12) 0 1px, transparent 1px 92px);
-    box-shadow:
-      inset 0 0 90px rgba(56, 200, 255, 0.1),
-      0 0 90px rgba(56, 200, 255, 0.16);
-    opacity: 0.42;
-    animation: worldGridDrift 18s linear infinite;
+  .hero-world__orb {
+    transform-origin: 640px 360px;
+    animation: worldFloat 12s ease-in-out infinite;
   }
 
-  .hero-world__globe::after {
-    @apply absolute inset-x-[8%] bottom-[9%] h-[38%] content-[''];
-    background:
-      linear-gradient(180deg, transparent, rgba(0, 49, 80, 0.28)),
-      radial-gradient(ellipse at 50% 80%, rgba(56, 200, 255, 0.22), transparent 52%);
-    opacity: 0.7;
+  .hero-world__outer-glow {
+    fill: none;
+    stroke: rgba(56, 200, 255, 0.16);
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 38px rgba(56, 200, 255, 0.34));
   }
 
-  .hero-world__arc {
-    @apply absolute rounded-full border border-accent-lime/25;
-    box-shadow: 0 0 20px rgba(56, 200, 255, 0.16);
+  .hero-world__sphere {
+    stroke: rgba(139, 223, 255, 0.35);
+    stroke-width: 1.4;
   }
 
-  .hero-world__arc--one {
-    inset: 12% 1%;
-    transform: rotate(-8deg);
-    animation: worldArcGlow 5.8s ease-in-out infinite;
+  .hero-world__grid ellipse,
+  .hero-world__grid path {
+    fill: none;
+    stroke: rgba(139, 223, 255, 0.26);
+    stroke-width: 1.1;
   }
 
-  .hero-world__arc--two {
-    inset: 24% -4% 28%;
-    transform: rotate(12deg);
-    animation: worldArcGlow 7s ease-in-out infinite reverse;
+  .hero-world__continents {
+    fill: rgba(56, 200, 255, 0.2);
+    stroke: rgba(139, 223, 255, 0.26);
+    stroke-width: 1.1;
+    filter: drop-shadow(0 0 14px rgba(56, 200, 255, 0.2));
+    transform-origin: 640px 360px;
+    animation: continentDrift 16s ease-in-out infinite;
   }
 
-  .hero-world__arc--three {
-    inset: 8% 24%;
-    transform: rotate(62deg);
-    animation: worldArcGlow 6.4s ease-in-out infinite;
+  .hero-world__routes path {
+    fill: none;
+    stroke: url('#globeLine');
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 8 14;
+    animation: pathFlow 6s linear infinite;
+    filter: drop-shadow(0 0 9px rgba(56, 200, 255, 0.55));
   }
 
-  .hero-world__arc--four {
-    inset: 18% 31%;
-    transform: rotate(-62deg);
-    animation: worldArcGlow 8s ease-in-out infinite reverse;
+  .hero-world__routes path:nth-child(2) {
+    animation-delay: -1.4s;
   }
 
-  .hero-world__pulse {
-    @apply absolute h-3 w-3 rounded-full bg-accent-lime;
-    box-shadow:
-      0 0 0 7px rgba(56, 200, 255, 0.08),
-      0 0 28px rgba(56, 200, 255, 0.78);
+  .hero-world__routes path:nth-child(3) {
+    animation-delay: -2.6s;
+  }
+
+  .hero-world__routes path:nth-child(4) {
+    animation-delay: -3.8s;
+  }
+
+  .hero-world__nodes g {
     animation: worldPulse 2.8s ease-in-out infinite;
+    transform-origin: center;
   }
 
-  .hero-world__pulse--one {
-    left: 35%;
-    top: 38%;
+  .hero-world__node-ring {
+    fill: rgba(56, 200, 255, 0.08);
+    stroke: rgba(139, 223, 255, 0.32);
+    stroke-width: 1;
   }
 
-  .hero-world__pulse--two {
-    left: 54%;
-    top: 50%;
-    animation-delay: -0.9s;
-  }
-
-  .hero-world__pulse--three {
-    left: 70%;
-    top: 70%;
-    animation-delay: -1.7s;
+  .hero-world__node-core {
+    fill: #38c8ff;
+    filter: drop-shadow(0 0 14px rgba(56, 200, 255, 0.9));
   }
 
   .electric-grid-lines {
@@ -489,21 +481,23 @@
   }
 }
 
-@keyframes worldGridDrift {
-  to {
-    background-position: 360px 0, 0 240px;
+@keyframes worldFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.02);
   }
 }
 
-@keyframes worldArcGlow {
+@keyframes continentDrift {
   0%,
   100% {
-    opacity: 0.2;
-    filter: drop-shadow(0 0 4px rgba(56, 200, 255, 0.2));
+    transform: translateX(-10px);
   }
   50% {
-    opacity: 0.68;
-    filter: drop-shadow(0 0 18px rgba(56, 200, 255, 0.45));
+    transform: translateX(16px);
   }
 }
 
@@ -578,9 +572,10 @@
   .data-sweep,
   .electric-line,
   .dark-grid-band::before,
-  .hero-world__globe::before,
-  .hero-world__arc,
-  .hero-world__pulse,
+  .hero-world__orb,
+  .hero-world__continents,
+  .hero-world__routes path,
+  .hero-world__nodes g,
   .tech-visual__map::after,
   .network-path,
   .network-node,
@@ -595,12 +590,8 @@
 }
 
 @media (max-width: 767px) {
-  .hero-world__globe {
-    @apply left-[56%] top-[42%] h-[480px] w-[760px];
-  }
-
-  .hero-world__arc--three,
-  .hero-world__arc--four {
-    opacity: 0.28;
+  .hero-world__svg {
+    @apply left-[55%] top-[40%] h-[520px] w-[920px];
+    opacity: 0.46;
   }
 }

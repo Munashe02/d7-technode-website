@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import HeroWorldGlobe from '@/components/HeroWorldGlobe'
 import TechHeroVisual from '@/components/TechHeroVisual'
 
 type PageHeroProps = {
@@ -31,15 +32,7 @@ export default function PageHero({
     <section className="relative overflow-hidden bg-ink text-white">
       <div className="absolute inset-0 grid-pattern opacity-35" aria-hidden="true" />
       <div className="hero-world" aria-hidden="true">
-        <div className="hero-world__globe">
-          <span className="hero-world__arc hero-world__arc--one" />
-          <span className="hero-world__arc hero-world__arc--two" />
-          <span className="hero-world__arc hero-world__arc--three" />
-          <span className="hero-world__arc hero-world__arc--four" />
-          <span className="hero-world__pulse hero-world__pulse--one" />
-          <span className="hero-world__pulse hero-world__pulse--two" />
-          <span className="hero-world__pulse hero-world__pulse--three" />
-        </div>
+        <HeroWorldGlobe />
       </div>
       <div className="electric-grid-lines" aria-hidden="true">
         {Array.from({ length: 10 }).map((_, index) => (

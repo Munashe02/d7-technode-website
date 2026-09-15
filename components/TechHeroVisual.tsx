@@ -13,6 +13,23 @@ export default function TechHeroVisual() {
   return (
     <div className="tech-visual" aria-label="Animated IoT monitoring dashboard visual">
       <div className="tech-visual__map" aria-hidden="true">
+        <div className="hero-globe">
+          <div className="hero-globe__halo" />
+          <div className="hero-globe__sphere">
+            <div className="hero-globe__longitude hero-globe__longitude--one" />
+            <div className="hero-globe__longitude hero-globe__longitude--two" />
+            <div className="hero-globe__longitude hero-globe__longitude--three" />
+            <div className="hero-globe__latitude hero-globe__latitude--one" />
+            <div className="hero-globe__latitude hero-globe__latitude--two" />
+            <div className="hero-globe__latitude hero-globe__latitude--three" />
+            <span className="hero-globe__node hero-globe__node--one" />
+            <span className="hero-globe__node hero-globe__node--two" />
+            <span className="hero-globe__node hero-globe__node--three" />
+          </div>
+          <div className="hero-globe__orbit hero-globe__orbit--one" />
+          <div className="hero-globe__orbit hero-globe__orbit--two" />
+        </div>
+
         <svg viewBox="0 0 640 520" className="absolute inset-0 h-full w-full">
           <path className="network-path network-path--one" d="M94 108 C184 68 278 122 348 92 S504 62 558 142" />
           <path className="network-path network-path--two" d="M84 346 C164 286 254 326 326 252 S472 212 562 302" />

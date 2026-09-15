@@ -213,6 +213,11 @@
     @apply relative overflow-hidden rounded-sm border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg;
   }
 
+  .sector-iot-icon {
+    @apply flex h-14 w-14 flex-col items-center justify-center gap-0.5 rounded-md border border-accent-lime bg-accent-lime text-primary-900 shadow-lg transition group-hover:-translate-y-0.5 group-hover:bg-accent-yellow;
+    box-shadow: 0 12px 28px rgba(0, 49, 80, 0.22), 0 0 18px rgba(212, 255, 0, 0.32);
+  }
+
   .signal-chip {
     @apply rounded-sm border border-primary-100 bg-primary-50 px-2.5 py-1 text-xs font-bold text-primary-800;
   }

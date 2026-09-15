@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Wifi } from 'lucide-react'
 import { sectors } from '@/lib/site-data'
 
 type SectorGridProps = {
@@ -31,8 +32,9 @@ export default function SectorGrid({ limit, compact = false }: SectorGridProps) 
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />
             <div className="absolute inset-0 sector-image-grid" aria-hidden="true" />
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-              <div className="flex h-11 w-11 items-center justify-center rounded-md border border-accent-lime/25 bg-slate-950/75 text-accent-lime backdrop-blur">
-                <sector.icon className="h-6 w-6" />
+              <div className={compact ? 'sector-iot-icon' : 'flex h-11 w-11 items-center justify-center rounded-md border border-accent-lime/25 bg-slate-950/75 text-accent-lime backdrop-blur'}>
+                {compact && <Wifi className="h-3.5 w-3.5" strokeWidth={2.6} />}
+                <sector.icon className={compact ? 'h-6 w-6' : 'h-6 w-6'} strokeWidth={2.2} />
               </div>
               <span className="rounded-sm border border-accent-lime/25 bg-accent-lime/10 px-2 py-1 text-xs font-black uppercase tracking-[0.18em] text-accent-lime">
                 Live sector

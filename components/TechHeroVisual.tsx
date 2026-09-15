@@ -9,6 +9,15 @@ const assets = [
 
 const signals = ['LoRa', 'NB-IoT', 'GSM', 'Cloud', 'AI Alerts']
 
+const floatingNodes = [
+  ['left-[9%] top-[23%]', 'TX', 'Transformer'],
+  ['right-[22%] top-[20%]', 'PV', 'Solar plant'],
+  ['left-[16%] bottom-[28%]', 'WL', 'Water line'],
+  ['left-[58%] top-[50%]', 'GW', 'Gateway'],
+  ['right-[5%] top-[58%]', 'FL', 'Fleet'],
+  ['right-[25%] bottom-[10%]', 'SC', 'Security'],
+]
+
 export default function TechHeroVisual() {
   return (
     <div className="tech-visual" aria-label="Animated IoT monitoring dashboard visual">
@@ -19,20 +28,6 @@ export default function TechHeroVisual() {
           <path className="network-path network-path--three" d="M148 438 C248 366 322 442 424 362 S514 262 584 238" />
           <path className="network-path network-path--four" d="M138 160 L244 246 L166 350 L326 252 L444 158 L526 284" />
         </svg>
-
-        {[
-          ['left-[10%] top-[18%]', 'TX', 'Transformer'],
-          ['left-[62%] top-[14%]', 'PV', 'Solar plant'],
-          ['left-[18%] top-[66%]', 'WL', 'Water line'],
-          ['left-[48%] top-[47%]', 'GW', 'Gateway'],
-          ['left-[75%] top-[55%]', 'FL', 'Fleet'],
-          ['left-[63%] top-[78%]', 'SC', 'Security'],
-        ].map(([position, code, label], index) => (
-          <div key={code} className={`network-node ${position}`} style={{ animationDelay: `${index * 0.18}s` }}>
-            <span>{code}</span>
-            <small>{label}</small>
-          </div>
-        ))}
       </div>
 
       <div className="tech-visual__panel">
@@ -79,6 +74,15 @@ export default function TechHeroVisual() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="tech-visual__floating-nodes" aria-hidden="true">
+        {floatingNodes.map(([position, code, label], index) => (
+          <div key={code} className={`network-node ${position}`} style={{ animationDelay: `${index * 0.18}s` }}>
+            <span>{code}</span>
+            <small>{label}</small>
+          </div>
+        ))}
       </div>
     </div>
   )

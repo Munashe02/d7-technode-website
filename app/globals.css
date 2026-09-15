@@ -90,23 +90,24 @@
   .hero-world {
     @apply pointer-events-none absolute inset-0 overflow-hidden;
     background:
-      radial-gradient(circle at 47% 36%, rgba(212, 255, 0, 0.16), transparent 20%),
-      radial-gradient(circle at 70% 22%, rgba(0, 130, 105, 0.25), transparent 30%),
-      linear-gradient(180deg, transparent 0%, rgba(0, 24, 39, 0.06) 62%, rgba(0, 24, 39, 0.5) 100%);
-    opacity: 0.92;
+      radial-gradient(circle at 48% 34%, rgba(212, 255, 0, 0.08), transparent 20%),
+      radial-gradient(circle at 70% 22%, rgba(0, 130, 105, 0.18), transparent 30%),
+      linear-gradient(180deg, transparent 0%, rgba(0, 24, 39, 0.05) 62%, rgba(0, 24, 39, 0.54) 100%);
+    opacity: 0.9;
     mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
   }
 
   .hero-world__svg {
-    @apply absolute left-1/2 top-[56%] h-[780px] w-[1660px] max-w-none -translate-x-1/2 -translate-y-1/2;
-    opacity: 0.8;
+    @apply absolute left-1/2 top-[55%] h-[770px] w-[1660px] max-w-none -translate-x-1/2 -translate-y-1/2;
+    opacity: 0.74;
   }
 
   .hero-world__map {
-    fill: rgba(212, 255, 0, 0.1);
-    stroke: rgba(212, 255, 0, 0.13);
+    fill: rgba(0, 24, 39, 0.26);
+    stroke: rgba(212, 255, 0, 0.08);
     stroke-width: 1.3;
-    filter: drop-shadow(0 0 18px rgba(212, 255, 0, 0.15));
+    filter: drop-shadow(0 0 10px rgba(212, 255, 0, 0.08));
+    opacity: 0.42;
     transform-origin: center;
     animation: mapDrift 20s ease-in-out infinite;
   }
@@ -114,11 +115,12 @@
   .hero-world__routes path {
     fill: none;
     stroke: url('#worldRoute');
-    stroke-width: 1.8;
+    stroke-width: 1.35;
     stroke-linecap: round;
     stroke-dasharray: 4 10;
     animation: pathFlow 7s linear infinite;
-    filter: drop-shadow(0 0 10px rgba(212, 255, 0, 0.42));
+    opacity: 0.5;
+    filter: drop-shadow(0 0 6px rgba(212, 255, 0, 0.28));
   }
 
   .hero-world__routes path:nth-child(2) {
@@ -140,23 +142,23 @@
 
   .hero-world__node-halo {
     fill: url('#worldNode');
-    opacity: 0.46;
+    opacity: 0.18;
   }
 
   .hero-world__node-ring {
-    fill: rgba(212, 255, 0, 0.08);
-    stroke: rgba(212, 255, 0, 0.45);
+    fill: rgba(212, 255, 0, 0.04);
+    stroke: rgba(212, 255, 0, 0.32);
     stroke-width: 1;
   }
 
   .hero-world__node-core {
     fill: #d4ff00;
-    filter: drop-shadow(0 0 16px rgba(212, 255, 0, 0.9));
+    filter: drop-shadow(0 0 10px rgba(212, 255, 0, 0.78));
   }
 
   .hero-world__city {
-    fill: rgba(0, 24, 39, 0.44);
-    stroke: rgba(212, 255, 0, 0.08);
+    fill: rgba(0, 24, 39, 0.38);
+    stroke: rgba(212, 255, 0, 0.055);
     stroke-width: 1;
     animation: cityGlow 8s ease-in-out infinite;
   }
@@ -232,19 +234,12 @@
     animation: gridCurrent 9s ease-in-out infinite;
   }
 
-  .data-sweep {
-    @apply pointer-events-none absolute inset-0;
-    background: linear-gradient(100deg, transparent 0%, rgba(56, 200, 255, 0.1) 46%, transparent 58%);
-    transform: translateX(-100%);
-    animation: dataSweep 8s linear infinite;
-  }
-
   .tech-visual {
     @apply absolute inset-0;
   }
 
   .tech-visual__map {
-    @apply absolute inset-0 overflow-hidden rounded-lg border border-white/10 bg-slate-950/30;
+    @apply absolute inset-0 overflow-hidden rounded-lg border border-white/10 bg-slate-950/20;
     box-shadow: inset 0 0 0 1px rgba(56, 200, 255, 0.05);
   }
 
@@ -264,7 +259,7 @@
   }
 
   .tech-visual__panel {
-    @apply absolute right-0 top-1/2 z-20 w-full max-w-md -translate-y-1/2 overflow-hidden rounded-lg border border-white/10 bg-slate-950/80 shadow-2xl backdrop-blur md:right-6;
+    @apply absolute right-0 top-1/2 z-20 w-full max-w-md -translate-y-1/2 overflow-hidden rounded-lg border border-white/10 bg-slate-950/85 shadow-2xl backdrop-blur md:right-6;
   }
 
   .network-path {
@@ -325,16 +320,6 @@
 
   .section {
     @apply py-20;
-  }
-}
-
-@keyframes dataSweep {
-  0% {
-    transform: translateX(-100%);
-  }
-  45%,
-  100% {
-    transform: translateX(120%);
   }
 }
 
@@ -436,7 +421,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .data-sweep,
   .dark-grid-band::before,
   .hero-world__map,
   .hero-world__routes path,

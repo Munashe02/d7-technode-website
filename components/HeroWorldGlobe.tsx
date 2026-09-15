@@ -1,18 +1,18 @@
 const nodes = [
-  { cx: 260, cy: 410, label: 'Americas', delay: '0s' },
-  { cx: 470, cy: 330, label: 'Atlantic', delay: '-0.5s' },
-  { cx: 690, cy: 390, label: 'Africa', delay: '-1.1s' },
-  { cx: 850, cy: 295, label: 'Europe', delay: '-1.6s' },
-  { cx: 1058, cy: 362, label: 'Asia', delay: '-2.2s' },
-  { cx: 1250, cy: 500, label: 'Pacific', delay: '-2.8s' },
+  { cx: 286, cy: 456, label: 'Americas', delay: '0s' },
+  { cx: 476, cy: 354, label: 'Atlantic', delay: '-0.5s' },
+  { cx: 686, cy: 420, label: 'Africa', delay: '-1.1s' },
+  { cx: 846, cy: 326, label: 'Europe', delay: '-1.6s' },
+  { cx: 1080, cy: 386, label: 'Asia', delay: '-2.2s' },
+  { cx: 1284, cy: 528, label: 'Pacific', delay: '-2.8s' },
 ]
 
 const routes = [
-  'M260 410 C420 235 590 260 690 390 S950 500 1250 500',
-  'M260 410 C520 480 770 470 1058 362',
-  'M470 330 C600 210 760 205 850 295 S1000 420 1250 500',
-  'M690 390 C740 315 790 288 850 295 S980 310 1058 362',
-  'M470 330 C520 425 585 450 690 390',
+  'M286 456 C430 250 590 286 686 420 S980 540 1284 528',
+  'M286 456 C520 506 790 492 1080 386',
+  'M476 354 C614 236 770 236 846 326 S1040 455 1284 528',
+  'M686 420 C742 344 790 318 846 326 S986 330 1080 386',
+  'M476 354 C530 454 592 478 686 420',
 ]
 
 export default function HeroWorldGlobe() {
@@ -52,9 +52,9 @@ export default function HeroWorldGlobe() {
       <g className="hero-world__nodes">
         {nodes.map((node) => (
           <g key={node.label} style={{ animationDelay: node.delay }}>
-            <circle className="hero-world__node-halo" cx={node.cx} cy={node.cy} r="30" />
-            <circle className="hero-world__node-ring" cx={node.cx} cy={node.cy} r="13" />
-            <circle className="hero-world__node-core" cx={node.cx} cy={node.cy} r="5" />
+            <circle className="hero-world__node-halo" cx={node.cx} cy={node.cy} r="18" />
+            <circle className="hero-world__node-ring" cx={node.cx} cy={node.cy} r="9" />
+            <circle className="hero-world__node-core" cx={node.cx} cy={node.cy} r="3.5" />
           </g>
         ))}
       </g>

@@ -35,7 +35,6 @@ export default function PageHero({
         <HeroWorldGlobe />
       </div>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-lime/70 to-transparent" aria-hidden="true" />
-      <div className="data-sweep" aria-hidden="true" />
       <div className="container-custom relative grid min-h-[680px] gap-12 py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] px-3 py-2">

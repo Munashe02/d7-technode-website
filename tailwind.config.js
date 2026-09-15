@@ -33,8 +33,8 @@ module.exports = {
           900: '#713f12',
         },
         accent: {
-          lime: '#38c8ff',
-          yellow: '#8bdfff',
+          lime: '#d4ff00',
+          yellow: '#ffed00',
           blue: '#003150',
         },
       },

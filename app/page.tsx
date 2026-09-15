@@ -9,8 +9,8 @@ export default function Home() {
     <div>
       <PageHero
         eyebrow="D7 TechNode"
-        title="D7 TechNode connects, monitors and automates critical infrastructure."
-        titleLines={['D7 TechNode', 'Connects.', 'Monitors.', 'Automates.', 'Critical infrastructure.']}
+        title="Connect. Monitor. Automate. Critical infrastructure."
+        titleLines={['Connect.', 'Monitor.', 'Automate.', 'Critical infrastructure.']}
         description="Industrial IoT systems for assets that move, leak, vibrate, heat up, cool down or disappear when nobody is watching."
         proofPoints={['Live asset telemetry', 'Instant risk alerts', 'Automated response']}
         primaryHref="/contact"

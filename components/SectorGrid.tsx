@@ -40,7 +40,7 @@ export default function SectorGrid({ limit }: SectorGridProps) {
           </div>
           <div className="p-6">
             <div className="flex items-center justify-between">
-              <span className="h-2 w-2 rounded-full bg-accent-lime shadow-[0_0_14px_rgba(56,200,255,0.7)]" />
+              <span className="h-2 w-2 rounded-full bg-accent-lime shadow-[0_0_14px_rgba(212,255,0,0.7)]" />
             </div>
             <h3 className="mt-4 text-xl font-bold text-slate-950 group-hover:text-primary-800">
               {sector.title}

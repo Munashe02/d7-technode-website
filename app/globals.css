@@ -27,7 +27,7 @@
   }
 
   .btn-primary {
-    @apply rounded-md bg-primary-700 px-5 py-3 font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-accent-lime hover:text-primary-900 hover:shadow-md;
+    @apply rounded-md bg-accent-lime px-5 py-3 font-bold text-primary-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-accent-yellow hover:shadow-md;
   }
 
   .btn-secondary {
@@ -43,7 +43,7 @@
   }
 
   .hero-lockup {
-    @apply mt-6 flex flex-col font-heading font-black uppercase leading-[0.92] tracking-normal text-white;
+    @apply mt-6 flex flex-col font-heading font-semibold leading-[1.05] tracking-normal text-white;
   }
 
   .hero-lockup__brand {
@@ -51,15 +51,15 @@
   }
 
   .hero-lockup__verb {
-    @apply text-5xl leading-[0.95] text-white md:text-7xl;
+    @apply text-5xl leading-[1.05] text-white md:text-7xl;
   }
 
-  .hero-lockup__verb:nth-child(3) {
+  .hero-lockup__verb:nth-child(2) {
     @apply text-accent-lime;
   }
 
   .hero-lockup__outcome {
-    @apply mt-4 max-w-2xl border-t border-white/15 pt-4 text-3xl leading-none text-slate-200 md:text-5xl;
+    @apply mt-10 max-w-2xl border-t border-accent-lime/80 pt-8 text-3xl font-bold leading-tight text-slate-100 md:text-5xl;
   }
 
   .hero-proof {
@@ -76,73 +76,49 @@
 
   .bg-ink {
     background:
-      linear-gradient(115deg, rgba(56, 200, 255, 0.14), transparent 25%),
-      linear-gradient(135deg, #001827 0%, #003150 48%, #00506f 100%);
+      linear-gradient(115deg, rgba(212, 255, 0, 0.08), transparent 24%),
+      linear-gradient(135deg, #002333 0%, #003150 42%, #00545b 100%);
   }
 
   .grid-pattern {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 56px 56px;
+      linear-gradient(rgba(139, 223, 255, 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 223, 255, 0.16) 1px, transparent 1px);
+    background-size: 64px 64px;
   }
 
   .hero-world {
     @apply pointer-events-none absolute inset-0 overflow-hidden;
     background:
-      radial-gradient(circle at 52% 46%, rgba(56, 200, 255, 0.16), transparent 26%),
-      radial-gradient(circle at 73% 28%, rgba(139, 223, 255, 0.12), transparent 28%),
-      linear-gradient(180deg, transparent 0%, rgba(0, 24, 39, 0.12) 76%, rgba(0, 24, 39, 0.42) 100%);
-    opacity: 0.95;
+      radial-gradient(circle at 47% 36%, rgba(212, 255, 0, 0.16), transparent 20%),
+      radial-gradient(circle at 70% 22%, rgba(0, 130, 105, 0.25), transparent 30%),
+      linear-gradient(180deg, transparent 0%, rgba(0, 24, 39, 0.06) 62%, rgba(0, 24, 39, 0.5) 100%);
+    opacity: 0.92;
     mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
   }
 
   .hero-world__svg {
-    @apply absolute left-1/2 top-[52%] h-[760px] w-[1350px] max-w-none -translate-x-1/2 -translate-y-1/2;
-    opacity: 0.72;
+    @apply absolute left-1/2 top-[56%] h-[780px] w-[1660px] max-w-none -translate-x-1/2 -translate-y-1/2;
+    opacity: 0.8;
   }
 
-  .hero-world__orb {
-    transform-origin: 640px 360px;
-    animation: worldFloat 12s ease-in-out infinite;
-  }
-
-  .hero-world__outer-glow {
-    fill: none;
-    stroke: rgba(56, 200, 255, 0.16);
-    stroke-width: 1.5;
-    filter: drop-shadow(0 0 38px rgba(56, 200, 255, 0.34));
-  }
-
-  .hero-world__sphere {
-    stroke: rgba(139, 223, 255, 0.35);
-    stroke-width: 1.4;
-  }
-
-  .hero-world__grid ellipse,
-  .hero-world__grid path {
-    fill: none;
-    stroke: rgba(139, 223, 255, 0.26);
-    stroke-width: 1.1;
-  }
-
-  .hero-world__continents {
-    fill: rgba(56, 200, 255, 0.2);
-    stroke: rgba(139, 223, 255, 0.26);
-    stroke-width: 1.1;
-    filter: drop-shadow(0 0 14px rgba(56, 200, 255, 0.2));
-    transform-origin: 640px 360px;
-    animation: continentDrift 16s ease-in-out infinite;
+  .hero-world__map {
+    fill: rgba(212, 255, 0, 0.1);
+    stroke: rgba(212, 255, 0, 0.13);
+    stroke-width: 1.3;
+    filter: drop-shadow(0 0 18px rgba(212, 255, 0, 0.15));
+    transform-origin: center;
+    animation: mapDrift 20s ease-in-out infinite;
   }
 
   .hero-world__routes path {
     fill: none;
-    stroke: url('#globeLine');
-    stroke-width: 1.5;
+    stroke: url('#worldRoute');
+    stroke-width: 1.8;
     stroke-linecap: round;
-    stroke-dasharray: 8 14;
-    animation: pathFlow 6s linear infinite;
-    filter: drop-shadow(0 0 9px rgba(56, 200, 255, 0.55));
+    stroke-dasharray: 4 10;
+    animation: pathFlow 7s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(212, 255, 0, 0.42));
   }
 
   .hero-world__routes path:nth-child(2) {
@@ -162,104 +138,27 @@
     transform-origin: center;
   }
 
+  .hero-world__node-halo {
+    fill: url('#worldNode');
+    opacity: 0.46;
+  }
+
   .hero-world__node-ring {
-    fill: rgba(56, 200, 255, 0.08);
-    stroke: rgba(139, 223, 255, 0.32);
+    fill: rgba(212, 255, 0, 0.08);
+    stroke: rgba(212, 255, 0, 0.45);
     stroke-width: 1;
   }
 
   .hero-world__node-core {
-    fill: #38c8ff;
-    filter: drop-shadow(0 0 14px rgba(56, 200, 255, 0.9));
+    fill: #d4ff00;
+    filter: drop-shadow(0 0 16px rgba(212, 255, 0, 0.9));
   }
 
-  .electric-grid-lines {
-    @apply pointer-events-none absolute inset-0 overflow-hidden;
-    opacity: 0.9;
-    mask-image:
-      linear-gradient(90deg, transparent, black 12%, black 88%, transparent),
-      linear-gradient(180deg, black, black 72%, transparent);
-  }
-
-  .electric-line {
-    @apply absolute block;
-    background:
-      linear-gradient(90deg, transparent, rgba(56, 200, 255, 0.08), transparent),
-      linear-gradient(90deg, transparent 0%, rgba(56, 200, 255, 0.14) 34%, #8bdfff 48%, rgba(56, 200, 255, 0.92) 55%, transparent 72%);
-    background-size: 100% 100%, 220px 100%;
-    background-position: 0 0, -240px 0;
-    filter: drop-shadow(0 0 8px rgba(56, 200, 255, 0.55));
-    animation: electricTrace 7.5s linear infinite;
-  }
-
-  .electric-line:nth-child(odd) {
-    height: 1px;
-    left: 0;
-    right: 0;
-  }
-
-  .electric-line:nth-child(even) {
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background:
-      linear-gradient(180deg, transparent, rgba(56, 200, 255, 0.08), transparent),
-      linear-gradient(180deg, transparent 0%, rgba(56, 200, 255, 0.14) 34%, #8bdfff 48%, rgba(56, 200, 255, 0.92) 55%, transparent 72%);
-    background-size: 100% 100%, 100% 220px;
-    background-position: 0 0, 0 -240px;
-    animation-name: electricTraceVertical;
-  }
-
-  .electric-line:nth-child(1) {
-    top: 112px;
-    animation-delay: -1.2s;
-  }
-
-  .electric-line:nth-child(2) {
-    left: 168px;
-    animation-delay: -4.8s;
-  }
-
-  .electric-line:nth-child(3) {
-    top: 280px;
-    animation-delay: -3.1s;
-  }
-
-  .electric-line:nth-child(4) {
-    left: 392px;
-    animation-delay: -0.7s;
-  }
-
-  .electric-line:nth-child(5) {
-    top: 448px;
-    animation-delay: -5.6s;
-  }
-
-  .electric-line:nth-child(6) {
-    left: 616px;
-    animation-delay: -2.2s;
-  }
-
-  .electric-line:nth-child(7) {
-    top: 616px;
-    animation-delay: -6.7s;
-  }
-
-  .electric-line:nth-child(8) {
-    left: 840px;
-    animation-delay: -3.9s;
-  }
-
-  .electric-line:nth-child(9) {
-    top: 224px;
-    animation-delay: -7.1s;
-    opacity: 0.6;
-  }
-
-  .electric-line:nth-child(10) {
-    left: 1064px;
-    animation-delay: -5s;
-    opacity: 0.6;
+  .hero-world__city {
+    fill: rgba(0, 24, 39, 0.44);
+    stroke: rgba(212, 255, 0, 0.08);
+    stroke-width: 1;
+    animation: cityGlow 8s ease-in-out infinite;
   }
 
   .section-technical {
@@ -370,7 +269,7 @@
 
   .network-path {
     fill: none;
-    stroke: rgba(56, 200, 255, 0.44);
+    stroke: rgba(212, 255, 0, 0.34);
     stroke-linecap: round;
     stroke-width: 1.6;
     stroke-dasharray: 8 14;
@@ -379,7 +278,7 @@
 
   .network-path--two {
     animation-duration: 7s;
-    stroke: rgba(139, 223, 255, 0.44);
+    stroke: rgba(0, 175, 175, 0.42);
   }
 
   .network-path--three {
@@ -439,38 +338,6 @@
   }
 }
 
-@keyframes electricTrace {
-  0% {
-    background-position: 0 0, -260px 0;
-    opacity: 0.1;
-  }
-  8%,
-  42% {
-    opacity: 0.95;
-  }
-  58%,
-  100% {
-    background-position: 0 0, calc(100vw + 260px) 0;
-    opacity: 0.08;
-  }
-}
-
-@keyframes electricTraceVertical {
-  0% {
-    background-position: 0 0, 0 -260px;
-    opacity: 0.1;
-  }
-  8%,
-  42% {
-    opacity: 0.85;
-  }
-  58%,
-  100% {
-    background-position: 0 0, 0 980px;
-    opacity: 0.08;
-  }
-}
-
 @keyframes gridCurrent {
   0%,
   100% {
@@ -481,23 +348,23 @@
   }
 }
 
-@keyframes worldFloat {
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-14px) scale(1.02);
-  }
-}
-
-@keyframes continentDrift {
+@keyframes mapDrift {
   0%,
   100% {
     transform: translateX(-10px);
   }
   50% {
     transform: translateX(16px);
+  }
+}
+
+@keyframes cityGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
@@ -570,12 +437,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .data-sweep,
-  .electric-line,
   .dark-grid-band::before,
-  .hero-world__orb,
-  .hero-world__continents,
+  .hero-world__map,
   .hero-world__routes path,
   .hero-world__nodes g,
+  .hero-world__city,
   .tech-visual__map::after,
   .network-path,
   .network-node,

@@ -34,35 +34,35 @@ export default function PageHero({
       <div className="hero-world" aria-hidden="true">
         <HeroWorldGlobe />
       </div>
-      <div className="electric-grid-lines" aria-hidden="true">
-        {Array.from({ length: 10 }).map((_, index) => (
-          <span key={index} className="electric-line" />
-        ))}
-      </div>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-lime/70 to-transparent" aria-hidden="true" />
       <div className="data-sweep" aria-hidden="true" />
       <div className="container-custom relative grid min-h-[680px] gap-12 py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.04] px-3 py-2">
-            <span className="h-2 w-2 rounded-full bg-accent-lime shadow-[0_0_16px_rgba(56,200,255,0.7)]" />
+            <span className="h-2 w-2 rounded-full bg-accent-lime shadow-[0_0_16px_rgba(212,255,0,0.7)]" />
             <p className="eyebrow text-accent-lime">{eyebrow}</p>
           </div>
           {titleLines && titleLines.length > 0 ? (
             <h1 className="hero-lockup" aria-label={title}>
-              {titleLines.map((line, index) => (
-                <span
-                  key={line}
-                  className={
-                    index === 0
-                      ? 'hero-lockup__brand'
-                      : index === titleLines.length - 1
-                        ? 'hero-lockup__outcome'
-                        : 'hero-lockup__verb'
-                  }
-                >
-                  {line}
-                </span>
-              ))}
+              {titleLines.map((line, index) => {
+                const isBrandLine = index === 0 && line.toLowerCase().includes('technode')
+                const isOutcomeLine = index === titleLines.length - 1
+
+                return (
+                  <span
+                    key={line}
+                    className={
+                      isBrandLine
+                        ? 'hero-lockup__brand'
+                        : isOutcomeLine
+                          ? 'hero-lockup__outcome'
+                          : 'hero-lockup__verb'
+                    }
+                  >
+                    {line}
+                  </span>
+                )
+              })}
             </h1>
           ) : (
             <h1 className="mt-5 text-4xl font-heading font-bold leading-tight text-white md:text-6xl">

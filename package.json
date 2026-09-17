@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "node scripts/next-dev.cjs",
     "build": "next build",
-    "start": "next start",
+    "start": "node server.cjs",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=20 <23"
   },
   "dependencies": {
     "@portabletext/react": "^3.0.11",

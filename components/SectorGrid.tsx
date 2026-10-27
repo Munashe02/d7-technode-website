@@ -16,7 +16,7 @@ export default function SectorGrid({ limit, compact = false }: SectorGridProps) 
       {visibleSectors.map((sector, index) => (
         <Link
           key={sector.slug}
-          href="/services"
+          href={`/services/${sector.slug}`}
           className={compact ? 'sector-showcase-card group' : 'technical-card group'}
         >
           <div className={`relative overflow-hidden ${compact ? 'h-36' : 'h-44'}`}>

@@ -51,7 +51,6 @@ export const metadata: Metadata = {
       'Industrial IoT monitoring, alerts and automation for critical infrastructure across Africa.',
     images: ['/hero/connected-infrastructure-bg.jpg'],
   },
-  icons: { icon: '/logo.png', apple: '/logo.png' },
   manifest: '/manifest.webmanifest',
 }
 

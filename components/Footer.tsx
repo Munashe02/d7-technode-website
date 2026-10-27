@@ -82,7 +82,7 @@ export default function Footer() {
               {sectors.map((sector) => (
                 <Link
                   key={sector.slug}
-                  href="/services"
+                  href={`/services/${sector.slug}`}
                   className="rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold text-slate-200 transition hover:border-accent-lime/40 hover:text-accent-lime"
                 >
                   {sector.title}

@@ -4,12 +4,14 @@ import PageHero from '@/components/PageHero'
 import SectionHeader from '@/components/SectionHeader'
 import SectorGrid from '@/components/SectorGrid'
 import { sectors, workflow } from '@/lib/site-data'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Solutions - D7 TechNode',
+export const metadata: Metadata = createPageMetadata({
+  title: 'Solutions',
   description:
     'IoT, AI and automation solutions for energy, water, agriculture, mining, logistics, security, buildings, health and environmental monitoring.',
-}
+  path: '/services',
+})
 
 export default function ServicesPage() {
   return (

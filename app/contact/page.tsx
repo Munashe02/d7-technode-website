@@ -40,16 +40,30 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-slate-950">Send a message</h2>
             <form onSubmit={handleSubmit} className="mt-8 grid gap-5">
               {[
-                { id: 'name', label: 'Full Name', type: 'text', required: true },
-                { id: 'company', label: 'Company', type: 'text', required: true },
-                { id: 'phone', label: 'Phone', type: 'tel', required: true },
-                { id: 'email', label: 'Email Address', type: 'email', required: true },
+                { id: 'name', label: 'Full Name', type: 'text', autoComplete: 'name', required: true },
+                {
+                  id: 'company',
+                  label: 'Company',
+                  type: 'text',
+                  autoComplete: 'organization',
+                  required: true,
+                },
+                { id: 'phone', label: 'Phone', type: 'tel', autoComplete: 'tel', required: true },
+                {
+                  id: 'email',
+                  label: 'Email Address',
+                  type: 'email',
+                  autoComplete: 'email',
+                  required: true,
+                },
               ].map((field) => (
                 <label key={field.id} htmlFor={field.id} className="grid gap-2 text-sm font-semibold text-slate-700">
                   {field.label}
                   <input
                     id={field.id}
+                    name={field.id}
                     type={field.type}
+                    autoComplete={field.autoComplete}
                     required={field.required}
                     value={formData[field.id as keyof typeof formData]}
                     onChange={(event) => setFormData({ ...formData, [field.id]: event.target.value })}
@@ -62,6 +76,7 @@ export default function ContactPage() {
                 Sector
                 <select
                   id="sector"
+                  name="sector"
                   required
                   value={formData.sector}
                   onChange={(event) => setFormData({ ...formData, sector: event.target.value })}
@@ -81,6 +96,7 @@ export default function ContactPage() {
                 Message
                 <textarea
                   id="message"
+                  name="message"
                   required
                   rows={6}
                   value={formData.message}

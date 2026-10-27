@@ -3,11 +3,13 @@ import CTA from '@/components/CTA'
 import PageHero from '@/components/PageHero'
 import SectionHeader from '@/components/SectionHeader'
 import { resources } from '@/lib/site-data'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Resources - D7 TechNode',
+export const metadata: Metadata = createPageMetadata({
+  title: 'Resources',
   description: 'Support resources, manuals, API documentation and troubleshooting for D7 TechNode deployments.',
-}
+  path: '/resources',
+})
 
 export default function ResourcesPage() {
   return (

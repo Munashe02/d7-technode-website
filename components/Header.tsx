@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
@@ -15,10 +16,11 @@ const navigation = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
-      <nav className="container-custom py-3">
+      <nav className="container-custom py-3" aria-label="Primary navigation">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <div className="h-10 w-32 flex-shrink-0 md:h-12 md:w-44">
@@ -39,6 +41,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className="text-sm font-semibold text-slate-700 transition-colors hover:text-primary-800"
+                aria-current={pathname === item.href ? 'page' : undefined}
               >
                 {item.name}
               </Link>
@@ -53,13 +56,14 @@ export default function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <div className="mt-3 border-t border-slate-200 py-4 md:hidden">
+          <div id="mobile-navigation" className="mt-3 border-t border-slate-200 py-4 md:hidden">
             <div className="flex flex-col gap-4">
               {navigation.map((item) => (
                 <Link
@@ -67,6 +71,7 @@ export default function Header() {
                   href={item.href}
                   className="font-semibold text-slate-700 transition-colors hover:text-primary-800"
                   onClick={() => setIsMenuOpen(false)}
+                  aria-current={pathname === item.href ? 'page' : undefined}
                 >
                   {item.name}
                 </Link>

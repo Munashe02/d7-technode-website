@@ -3,12 +3,14 @@ import CTA from '@/components/CTA'
 import PageHero from '@/components/PageHero'
 import SectionHeader from '@/components/SectionHeader'
 import { company, valuePillars } from '@/lib/site-data'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'About D7 TechNode',
+export const metadata: Metadata = createPageMetadata({
+  title: 'About',
   description:
     'D7 TechNode is an African digital infrastructure company delivering intelligent systems for connected critical infrastructure.',
-}
+  path: '/about',
+})
 
 export default function AboutPage() {
   return (

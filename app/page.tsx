@@ -1,8 +1,20 @@
+import type { Metadata } from 'next'
 import CTA from '@/components/CTA'
 import PageHero from '@/components/PageHero'
 import SectionHeader from '@/components/SectionHeader'
 import SectorGrid from '@/components/SectorGrid'
 import { platformCapabilities, valuePillars, workflow } from '@/lib/site-data'
+import { createPageMetadata } from '@/lib/metadata'
+
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: 'Intelligent Infrastructure Systems',
+    description:
+      'D7 TechNode connects, monitors and automates critical infrastructure with industrial IoT, cloud telemetry and real-time alerts.',
+    path: '/',
+  }),
+  title: 'D7 TechNode | Intelligent Infrastructure Systems',
+}
 
 const homeMetrics = [
   { value: '9', label: 'Core Infrastructure Sectors' },

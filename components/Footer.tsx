@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { company, sectors } from '@/lib/site-data'
 
 export default function Footer() {
@@ -12,11 +12,6 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-heading font-bold">{company.legalName}</h3>
             <p className="max-w-xs text-slate-300">{company.description}</p>
-            <div className="flex">
-              <a href="#" className="text-slate-400 transition-colors hover:text-accent-lime" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-            </div>
           </div>
 
           <div>
@@ -50,11 +45,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-slate-300">
                 <Mail size={18} className="mt-1 flex-shrink-0 text-accent-lime" />
-                <span>{company.email}</span>
+                <a className="hover:text-white" href={`mailto:${company.email}`}>
+                  {company.email}
+                </a>
               </li>
               <li className="flex items-start gap-3 text-slate-300">
                 <Phone size={18} className="mt-1 flex-shrink-0 text-accent-lime" />
-                <span>{company.phone}</span>
+                <a className="hover:text-white" href="tel:+27796141397">
+                  {company.phone}
+                </a>
               </li>
               {company.offices.map((office) => (
                 <li key={office.country} className="flex items-start gap-3 text-slate-300">

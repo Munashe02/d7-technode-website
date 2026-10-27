@@ -3,12 +3,14 @@ import CTA from '@/components/CTA'
 import PageHero from '@/components/PageHero'
 import SectionHeader from '@/components/SectionHeader'
 import { hardwareCategories } from '@/lib/site-data'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Hardware - D7 TechNode',
+export const metadata: Metadata = createPageMetadata({
+  title: 'Hardware',
   description:
     'Rugged IoT sensors, gateways, relays and enclosures for industrial monitoring and automation deployments.',
-}
+  path: '/products',
+})
 
 export default function ProductsPage() {
   return (
